@@ -1,7 +1,19 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿Televisao tv = new Televisao(42);
+tv.Ligar();
 
-Televisao tv = new Televisao();
-tv.Tamannho = 22.5f;
+tv.EscolherCanal(1);
+tv.AumentarVolume();
+Console.WriteLine("teste");
+Console.WriteLine(tv.canalAtual);
+Console.WriteLine();
 
-Console.WriteLine(tv.Tamannho);
+tv.AtivarMudo();
+tv.DesativarMudo();
+Console.WriteLine("Desativando mudo");
+Console.WriteLine(tv.volume);
+Console.WriteLine();
+
+
+tv.AumentarCanal();
+tv.DiminuirCanal();
+tv.Desligar();
