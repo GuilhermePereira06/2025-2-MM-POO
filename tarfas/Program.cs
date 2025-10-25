@@ -1,4 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿﻿// See https://aka.ms/new-console-template for more information
 Console.WriteLine("Hello, World!");
 
 Console.WriteLine("Preenchendo dados tarefa 01");
@@ -9,11 +9,16 @@ tarefa01.DataCriacao = DateTime.Now;
 tarefa01.Status = 1;
 tarefa01.DataExecucao = null;
 
-Console.WriteLine("Dados tarefa 01 preenchidos");
-
 Console.WriteLine("Inserindo dados no banco de dados");
 
 var operacoes = new Operacoes();
 int idInserido = operacoes.Criar(tarefa01);
+
+tarefa01.Id = idInserido;
+
+
+tarefa01.Nome = "Fazer compras e cozinhar";
+operacoes.Alterar(tarefa01);
+Console.WriteLine($"Dados inseridos no banco de dados com sucesso. Id: {idInserido}");
 
 Console.WriteLine($"Dados inseridos no banco de dados com sucesso. Id: {idInserido}");
